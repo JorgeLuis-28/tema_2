@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Prueba_Tema_2
 {
@@ -30,14 +31,40 @@ namespace Prueba_Tema_2
             Console.ForegroundColor = ConsoleColor.Cyan;
             int N5 = int.Parse(Console.ReadLine());
             Console.ResetColor();
-            float Total;
-            Total = (float)((N1 * 0.10) + (N2 * 0.10) + (N3 * 0.10) + (N4 * 0.20) + (N5 * 0.50));
+            float Promedio;
+            Promedio = (float)((N1 * 0.10) + (N2 * 0.10) + (N3 * 0.10) + (N4 * 0.20) + (N5 * 0.50));
             Console.Write("La nota final es: ");
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine(Total);
+            Console.WriteLine(Promedio);
             Console.ResetColor();
-
-            Console.Write("Calculando estado.... ");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Clear();   
+                Console.WriteLine("Calculando estado. ");
+                Thread.Sleep(100);
+                Console.Clear();
+                Console.WriteLine("Calculando estado.. ");
+                Thread.Sleep(100);
+                Console.Clear();
+                Console.WriteLine("Calculando estado... ");
+                Thread.Sleep(100);
+                Console.Clear();
+                Console.WriteLine("Calculando estado.... ");
+                Thread.Sleep(100);
+                Console.Clear();
+            }
+            Console.WriteLine("Calculando estado.... ");
+            if (Promedio>12.5)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Aprobado " + Promedio);
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Desaprobado " + Promedio);
+            }
+            Console.ResetColor();
         }
     }
 }
