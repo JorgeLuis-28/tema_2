@@ -28,6 +28,7 @@ namespace practica_tema_2
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(resta);
             Console.ResetColor();
+            
         }
     }
 }
